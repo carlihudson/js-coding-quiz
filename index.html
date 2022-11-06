@@ -12,26 +12,35 @@
 
 <body>
     <section class="top">
-    <a class="high-score" href="#highscorePage">View High Scores</a>  
-    <div class="timer" id="timer"></div>
+    <a class="hidden" id="hs" href="#highscorePage">View High Scores</a>  
+    <div class="hidden" id="timer"></div>
     </section>
     <section class="landing-page" id="welcomePage">
         <header>
             <h1 class="title">Coding Quiz</h1>
             <h3 class="intro">
                 How much do you know about coding? Test your knowlege with this timed quiz! 
-                If you get a question wrong, you lose 5 seconds. Good Luck!
+                <br>
+                If you get a question wrong, you lose 5 seconds.
+                <br>
+                <br>
+                Good Luck!
             </h3>
     
           </header>
-        <button class="start" id="startQuiz">Start!</button>   
+        <button id="startQuiz">Start!</button>   
     </section>
 
     <section class="hidden" id="quizPage">
           <main class="quiz-body">
             <h1 id="questions"></h1>
             <ul id="answers"></ul>
+                <li id="0"></li>
+                <li id="1"></li>
+                <li id="2"></li>
+                <li id="3"></li>
           </main>
+    </section>
 
         <section class="hidden" id="highscorePage">
           <h2>High Scores</h2>
