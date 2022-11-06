@@ -1,3 +1,4 @@
+
 // array with quiz questions
 var quizContent = [
     {
@@ -55,10 +56,6 @@ const hidePages = () => {
         let page = pages[i];
         if(!page.classList.contains('hidden')){
             page.classList.add('hidden')
-        }
-        
-    }
-}
 
 // function to start quiz
 const startGame = () => {
@@ -304,6 +301,7 @@ const updateQuestions = (array, index) => {
 //     });
 
 // }
+
 
 
 
