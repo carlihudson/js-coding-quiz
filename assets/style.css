@@ -27,10 +27,6 @@ button {
     
 }
 
-button:hover {
-    background-color: rgb(196, 23, 235);
-}
-
 .landing-page {
     text-align: center;
     margin: 3rem;
