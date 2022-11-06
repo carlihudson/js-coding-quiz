@@ -123,8 +123,9 @@ function updateQuestions(array, index) {
     console.log(answerChoices)
     for(var i = 0; i <= answerChoices.length; i++) {
         var choiceButtons = document.createElement('button');
-        answers.textContent = answerChoices[index];
+        answers.textContent = answerChoices[i];
         document.answers(append)
+        
 
        
     }
@@ -140,17 +141,9 @@ function updateQuestions(array, index) {
     // inside the loop create the LI and BUTTON elements
     // append the data to those elements
     // append those elements onto the HTML
-// }
 
 
-//     for(var i = 0; i <= choicesIndex.choices.length; i++) {
-//         var answerChoices = document.createElement('li');
-//         answerChoices.setAttribute("button", "");
-//         answers.append(answerChoices)
 
-//     }
-
-// }
 
 
 function hspage() {
