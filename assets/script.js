@@ -47,8 +47,8 @@ let welcomePage = document.getElementById('welcomePage')
 // quiz page
 let quizPage = document.getElementById('quizPage')
 let startQuiz = document.getElementById('startQuiz')
-let questions = document.getElementById('questions')
-let answers = document.getElementById('answers')
+let questionTextElm = document.getElementById('question-text')
+let answersTextElm = document.getElementById('answer-text')
 var previousButton = document.getElementById('prev')
 var nextButton = document.getElementById('next')
 
@@ -117,7 +117,8 @@ const startGame = () => {
 // event listener to start the quiz
 startQuiz.addEventListener('click', startGame)
 
-const displayQuestions = (arr) => {
+var displayQuestions = (arr) => {
+
     let arrIndex = []
     arr.map((el, i) => {
         arrIndex.push(i)
@@ -138,8 +139,7 @@ const updateQuestions = (array, index) => {
 }
 
 
-// var questionIndex = 0;
-//
+
 
 
 
