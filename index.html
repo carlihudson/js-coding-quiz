@@ -4,42 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" src="./assets/style.css">
     <title>JS Coding Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-    <section class="top">
-        <a class="high-score" href="#highscorePage">View High Scores</a>  
-        <div class="timer" id="timer"></div>
-    </section>  
-    
-    <section class="landing-page" id="welcomePage">
-        <header>
-            <h1 class="title">Coding Quiz</h1>
-            <h3 class="intro">
-                How much do you know about coding? Test your knowlege with this timed quiz! 
-                If you get a question wrong, you lose 5 seconds. Good Luck!
-            </h3>
-    
-          </header>
-        <button class="start" id="startQuiz">Start!</button>   
-    </section>
 
-    <section class="hidden" id="quizPage">
-          <main class="quiz-body">
-            <h1 id="questions"></h1>
-            <ul id="answers"></ul>
-            <button id="prev">Previous</button> 
-            <button id="next">Next</button>  
-          </main>
+    <main class="quiz-container">
+        <header class="timer"></div>
+        <div class="content">
+            <h1 class="title" style="text-align: center;" </h1>
+            <h3>How much do you konw about coding? Test your knowlege with this timed quiz! If you get a question wrong, you lose 5 seconds. Good Luck!</h3>
+        </div>
+        <footer class="foot"></footer>
+    </main>
 
-    </section>
-
-    <section class="hidden" id="highscorePage">
-        <h2>Highscores</h2>
-    </section>
-
-<script src="./assets/script.js" ></script>   
+<script src="./assets/script.js"></script>    
 </body>
 </html>
