@@ -78,7 +78,9 @@ const startGame = () => {
     secondsLeft = quizTime
     gameOn = true
 
+  // reassigning questions order value to be indexes of questions (quizContent array)
     questionsOrder = displayQuestions(quizContent)
+    console.log(questionsOrder)
     updateQuestions(quizContent, questionsOrder[questionIndex])
 
     let countDown = setInterval(() => {
@@ -98,29 +100,58 @@ const startGame = () => {
     }, 1000);
 }
 
-
-
-const displayQuestions = (arr) => {
+  // grabs index of questions and stores in array
+function displayQuestions(quizContent) {
+    // this is the array with the index in questionsOrder
     let arrIndex = []
-    arr.map((el, i) => {
+    // el is content, i is index
+    // .map is being used to push the indexes into the arrIndex (which started blank)
+    quizContent.map((el, i) => {
+        console.log(el)
         arrIndex.push(i)
     })
     return arrIndex
 }
 
-const updateQuestions = (array, index) => {
+// first parameter is all of my questions, second parameter is the index of the questionsOrder index
+function updateQuestions(array, index) {
     questions.textContent = array[index].question
-    let answ = [];
-    let button;
+    console.log(array[index].question)
+   
+
+    let answerChoices = array[index].choices;
+    console.log(answerChoices)
+    for(var i = 0; i <= answerChoices.length; i++) {
+        var choiceButtons = document.createElement('button');
+        answers.textContent = answerChoices[index];
+        document.answers(append)
+
+       
+    }
+
+  
 
  
+}
 
-    // create an array of answers
+
+
     // loop throudgh such array
     // inside the loop create the LI and BUTTON elements
     // append the data to those elements
     // append those elements onto the HTML
-}
+// }
+
+
+//     for(var i = 0; i <= choicesIndex.choices.length; i++) {
+//         var answerChoices = document.createElement('li');
+//         answerChoices.setAttribute("button", "");
+//         answers.append(answerChoices)
+
+//     }
+
+// }
+
 
 function hspage() {
     quizPage.classList.add('hidden')
