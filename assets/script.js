@@ -17,6 +17,11 @@ let answers = document.getElementById('answers');
 // high scores 
 let highscorePage = document.getElementById('highscorePage');
 
+// footer navigation
+// let footer = document.getElementById('nav');
+// let previous = document.getElementById('prev');
+// let next = document.getElementById('next')
+
 
 // array with quiz questions
 var quizContent = [
@@ -69,6 +74,7 @@ const startGame = () => {
     quizPage.classList.remove('hidden')
     timer.classList.remove('hidden')
     hs.classList.remove('hidden')
+    // footer.classList.remove('hidden')
 
 
    //starting score
@@ -78,9 +84,8 @@ const startGame = () => {
     secondsLeft = quizTime
     gameOn = true
 
-  // reassigning questions order value to be indexes of questions (quizContent array)
+  // reassigning questionsOrder value to be indexes of questions (quizContent array)
     questionsOrder = displayQuestions(quizContent)
-    console.log(questionsOrder)
     updateQuestions(quizContent, questionsOrder[questionIndex])
 
     let countDown = setInterval(() => {
@@ -101,49 +106,35 @@ const startGame = () => {
     }, 1000);
 }
 
-  // grabs index of questions and stores in array
+  // function that grabs index of questions and stores in array
 function displayQuestions(quizContent) {
     // this is the array with the index in questionsOrder
     let arrIndex = []
     // el is content, i is index
     // .map is being used to push the indexes into the arrIndex (which started blank)
     quizContent.map((el, i) => {
-        console.log(el)
         arrIndex.push(i)
     })
     return arrIndex
 }
 
-// first parameter is all of my questions, second parameter is the index of the questionsOrder index
+// first parameter is all of the questions, second parameter is the index of the questionsOrder index
 function updateQuestions(array, index) {
     questions.textContent = array[index].question
-    console.log(array[index].question)
    
 
     let answerChoices = array[index].choices;
-    console.log(answerChoices)
     for(var i = 0; i < answerChoices.length; i++) {
         var choiceButtons = document.createElement('button');
         choiceButtons.setAttribute('value', answerChoices[i]);
         choiceButtons.textContent = answerChoices[i];
         choiceButtons.setAttribute('class', "answchoice")
-        console.log(choiceButtons)
         answers.appendChild(choiceButtons)
-       
+
     }
 
- 
+
 }
-
-
-
-    // loop throudgh such array
-    // inside the loop create the LI and BUTTON elements
-    // append the data to those elements
-    // append those elements onto the HTML
-
-
-
 
 
 function hspage() {
@@ -153,4 +144,5 @@ function hspage() {
 
 startQuiz.addEventListener('click', startGame)
 hs.addEventListener('click', hspage)
+
 
