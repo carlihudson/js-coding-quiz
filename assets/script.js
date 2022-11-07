@@ -56,14 +56,16 @@ var quizContent = [
 let quizTime = 61;
 timer.textContent = 'Time: '+ quizTime 
 let secondsLeft;
+let penalty = 5;
 
 let gameOn = false;
+let score;
 
 let questionsOrder;
-let questionIndex
+let questionIndex;
 
 // function to start quiz
-const startGame = () => {
+function startGame() {
    //start at question 1
     questionIndex = 0
 
@@ -78,8 +80,7 @@ const startGame = () => {
 
 
    //starting score
-    numberCorrect = 0;
-    numberIncorrect = 0
+    score = 0
 
     secondsLeft = quizTime
     gameOn = true
