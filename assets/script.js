@@ -90,6 +90,7 @@ const startGame = () => {
         if(secondsLeft < 0 || !gameOn){
             clearInterval(countDown)
             secondsLeft = quizTime;
+            timer.textContent = ("Time's Up!")
 
             if(gameOn){
                 finalScore = 0;
@@ -124,17 +125,12 @@ function updateQuestions(array, index) {
     for(var i = 0; i < answerChoices.length; i++) {
         var choiceButtons = document.createElement('button');
         choiceButtons.setAttribute('value', answerChoices[i]);
+        choiceButtons.textContent = answerChoices[i];
         choiceButtons.setAttribute('class', "answchoice")
         console.log(choiceButtons)
         answers.appendChild(choiceButtons)
-        
-    
-        
-
        
     }
-
-  
 
  
 }
