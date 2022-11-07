@@ -121,10 +121,14 @@ function updateQuestions(array, index) {
 
     let answerChoices = array[index].choices;
     console.log(answerChoices)
-    for(var i = 0; i <= answerChoices.length; i++) {
+    for(var i = 0; i < answerChoices.length; i++) {
         var choiceButtons = document.createElement('button');
-        answers.textContent = answerChoices[i];
-        document.answers(append)
+        choiceButtons.setAttribute('value', answerChoices[i]);
+        choiceButtons.setAttribute('class', "answchoice")
+        console.log(choiceButtons)
+        answers.appendChild(choiceButtons)
+        
+    
         
 
        
