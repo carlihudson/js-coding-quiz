@@ -132,9 +132,30 @@ function updateQuestions(array, index) {
         choiceButtons.setAttribute('class', "answchoice")
         answers.appendChild(choiceButtons)
 
+        choiceButtons.addEventListener('click', answering);
+
     }
 
 
+}
+
+function answering(event) {
+    var userSelection = event.target;
+    console.log(userSelection.innerHTML);
+
+    if(userSelection.innerHTML === quizContent[questionIndex].answer) {
+        score = score + 5
+        // something that indicates that they're correct
+    }
+    else {
+        secondsLeft = secondsLeft - penalty
+        // incorrect! the correct answer is answerChoices.answer
+    }
+    console.log(score)
+
+    questionIndex++;
+
+    // also need a way to move forward through the question index when an answer is selected. I have previous and next buttons I can use but they're currently commented out
 }
 
 
