@@ -21,7 +21,7 @@ button {
     border-radius: 5px;
     border: none;
     color: white;
-    height: 50px;
+    height: 5rem;
     width: 150px;
     font-size: large;
     margin: 1rem;
@@ -32,7 +32,7 @@ button:hover {
    background-color:rgb(196, 23, 235); 
 }
 
-.landing-page, #quizPage, #nav {
+.landing-page, #quizPage, #highscorePage {
     text-align: center;
     margin: 3rem;
 

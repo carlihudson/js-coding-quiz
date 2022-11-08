@@ -17,11 +17,6 @@ let answers = document.getElementById('answers');
 // high scores 
 let highscorePage = document.getElementById('highscorePage');
 
-// footer navigation
-// let footer = document.getElementById('nav');
-// let previous = document.getElementById('prev');
-// let next = document.getElementById('next')
-
 
 // array with quiz questions
 var quizContent = [
@@ -88,6 +83,7 @@ function startGame() {
   // reassigning questionsOrder value to be indexes of questions (quizContent array)
     questionsOrder = displayQuestions(quizContent)
     updateQuestions(quizContent, questionsOrder[questionIndex])
+   
 
     let countDown = setInterval(() => {
         secondsLeft--;
@@ -140,28 +136,40 @@ function updateQuestions(array, index) {
 }
 
 function answering(event) {
-    var userSelection = event.target;
-    console.log(userSelection.innerHTML);
 
-    if(userSelection.innerHTML === quizContent[questionIndex].answer) {
-        score = score + 5
-        // something that indicates that they're correct
+    if(questionIndex === quizContent.length - 1) {
+        quizPage.classList.add('hidden');
+        highscorePage.classList.remove('hidden');
+        var intials = prompt("Good Job! Please enter your initials");
+
     }
     else {
-        secondsLeft = secondsLeft - penalty
-        // incorrect! the correct answer is answerChoices.answer
+        var userSelection = event.target;
+        console.log(userSelection.innerHTML);
+    
+        if(userSelection.innerHTML === quizContent[questionIndex].answer) {
+            score = score + 5
+            alert("Correct!");
+            
+        }
+        else {
+            secondsLeft = secondsLeft - penalty
+            alert("Incorrect! the correct answer is " + quizContent[questionIndex].answer)
+        }
+        console.log(score)
+    
+        answers.innerHTML = "";
+        questionIndex++;
+        updateQuestions(quizContent, questionsOrder[questionIndex])
     }
-    console.log(score)
-
-    questionIndex++;
-
-    // also need a way to move forward through the question index when an answer is selected. I have previous and next buttons I can use but they're currently commented out
+    
 }
 
 
 function hspage() {
     quizPage.classList.add('hidden')
     highscorePage.classList.remove('hidden')
+
 }
 
 startQuiz.addEventListener('click', startGame)
