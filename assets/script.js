@@ -147,7 +147,7 @@ function answering(event) {
             }
 
         var scoreInfo = {
-            intials: initials,
+            initials: initials,
             score: score
         } 
         existingScores.push(scoreInfo)
