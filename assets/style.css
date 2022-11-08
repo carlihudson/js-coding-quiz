@@ -41,5 +41,8 @@ button:hover {
 
 #scores {
     list-style: none;
+    font-size: 1.5rem;
+    padding-right: 1.75rem;
+}
 }
 
