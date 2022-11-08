@@ -22,9 +22,10 @@ button {
     border: none;
     color: white;
     height: 5rem;
-    width: 150px;
+    width: 10rem;
     font-size: large;
     margin: 1rem;
+    vertical-align: top;
     
 }
 
@@ -36,5 +37,9 @@ button:hover {
     text-align: center;
     margin: 3rem;
 
+}
+
+#scores {
+    list-style: none;
 }
 

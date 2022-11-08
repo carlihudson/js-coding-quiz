@@ -16,6 +16,7 @@ let answers = document.getElementById('answers');
 
 // high scores 
 let highscorePage = document.getElementById('highscorePage');
+let scoreList = document.getElementById('scores');
 
 
 // array with quiz questions
@@ -48,6 +49,7 @@ var quizContent = [
    
 ]
 
+// timer variables
 let quizTime = 61;
 timer.textContent = 'Time: '+ quizTime 
 let secondsLeft;
@@ -93,11 +95,8 @@ function startGame() {
             clearInterval(countDown)
             secondsLeft = quizTime;
             timer.textContent = ("Time's Up!")
-
-            if(gameOn){
-                finalScore = 0;
-                // run the highscore method
-            }
+            hspage()
+            
         }
         
     }, 1000);
@@ -131,16 +130,38 @@ function updateQuestions(array, index) {
         choiceButtons.addEventListener('click', answering);
 
     }
-
-
 }
 
+// function that scores and deletes time if a question is answered incorrectly
 function answering(event) {
 
     if(questionIndex === quizContent.length - 1) {
         quizPage.classList.add('hidden');
         highscorePage.classList.remove('hidden');
-        var intials = prompt("Good Job! Please enter your initials");
+        var initials = prompt("Good Job! Please enter your initials");
+
+        // function that stores scores in local storage and displays scores on the page
+        var existingScores = JSON.parse(localStorage.getItem('score'));
+            if(!existingScores) {
+                existingScores = []
+            }
+
+        var scoreInfo = {
+            intials: initials,
+            score: score
+        } 
+        existingScores.push(scoreInfo)
+
+            localStorage.setItem('score', JSON.stringify(existingScores))
+
+            for(var i = 0; i < existingScores.length; i++) {
+                createLi = document.createElement('li')
+                createLi.textContent = existingScores[i].initials + ":  " + existingScores[i].score;
+                scoreList.appendChild(createLi);
+            }
+            
+
+    
 
     }
     else {
@@ -162,6 +183,7 @@ function answering(event) {
         questionIndex++;
         updateQuestions(quizContent, questionsOrder[questionIndex])
     }
+
     
 }
 
